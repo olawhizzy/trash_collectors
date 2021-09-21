@@ -33,7 +33,13 @@ dependencies:
   motion_tab_bar: ^0.1.5 #for fancy motion nav bar
   animated_splash_screen: ^1.1.0 #for animation splash screen
   lottie: ^1.1.0 # for lottie amination image
-  flutter_webview_plugin: ^0.4.0 # for web view
+  #flutter_webview_plugin: ^0.4.0 # for web view
+  webview_flutter: ^2.0.14 # for webview
+  #vimeoplayer: ^0.1.8 #for vimeo
+  mailer: ^5.0.2 #for email
+  flutter_launcher_icons: ^0.9.1 # to create app icon
+  flutter_email_sender: ^5.0.2 # for send email
+
 
 dev_dependencies:
   flutter_test:

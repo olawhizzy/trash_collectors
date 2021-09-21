@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:trash_collectors/ui/home/home_page.dart';
+import 'package:trash_collectors/ui/home/landing_page.dart';
 import 'package:trash_collectors/ui/pages/about.dart';
+import 'package:trash_collectors/ui/pages/aboutMain.dart';
 import 'package:trash_collectors/ui/pages/contact.dart';
+import 'package:trash_collectors/ui/pages/quote.dart';
+import 'package:trash_collectors/ui/pages/serviceMain.dart';
 import 'package:trash_collectors/ui/pages/services.dart';
 import 'package:trash_collectors/ui/shared/variables.dart';
 class MainHome extends StatefulWidget {
@@ -17,14 +21,14 @@ class _MainHomeState extends State<MainHome> with TickerProviderStateMixin {
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    AboutUs(),
-    Services(),
+    LandingPage(),
+    //HomePage(),
+    AboutMainPage(),
+    //AboutUs(),
+    ServiceMain(),
+    //Services(),
     Contact(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    QoutePage()
   ];
 
   void _onItemTapped(int index) {
