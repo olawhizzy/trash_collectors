@@ -37,11 +37,17 @@ dependencies:
   webview_flutter: ^2.0.14 # for webview
   #vimeoplayer: ^0.1.8 #for vimeo
   mailer: ^5.0.2 #for email
-  flutter_launcher_icons: ^0.9.1 # to create app icon
+  flutter_launcher_icons: ^0.9.2 # to create app icon
   flutter_email_sender: ^5.0.2 # for send email
+  firebase_core: ^1.6.0 #for firebase
+  onesignal_flutter: ^3.2.3 #for flutter_one_signal
 
 
 dev_dependencies:
+  #onesignal_flutter: #^3.2.3
+  #  git:
+  #    url: https://github.com/luis901101/OneSignal-Flutter-SDK.git
+  #    ref: migrate_android_embedding_v2
   flutter_test:
     sdk: flutter
 

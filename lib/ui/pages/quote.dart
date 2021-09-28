@@ -150,60 +150,46 @@ class _QoutePageState extends State<QoutePage> {
     String username = 'bennetdiane01@gmail.com';
     String password = 'dianebennet1000123445';
 
-    final smtpServer = gmail(username, password);
+    //final smtpServer = gmail(username, password);
     // Use the SmtpServer class to configure an SMTP server:
     // final smtpServer = SmtpServer('smtp.domain.com');
     // See the named arguments of SmtpServer for further configuration
     // options.
 
     // Create our message.
-    final Email email = Email(
-      body: 'First name: ${_firstname} \n Last name: ${_lastname} \n Email: ${_email} \n Company name: ${_company} \n Job Title: ${_job} \n Phone: ${_phone} \n Comments: ${_comments} \n ';
+    /*final Email email = Email(
+      body: 'First name: ${_firstname} \n Last name: ${_lastname} \n Email: ${_email} \n Company name: ${_company} \n Job Title: ${_job} \n Phone: ${_phone} \n Comments: ${_comments} \n ',
       subject: 'Request a free quote :: 😀 :: ${DateTime.now()}',
-      recipients: username,
-      //cc: ['cc@example.com'],
+      recipients: ['${username}'],
+      //cc: ['cc@example.com'],tt
       //bcc: ['bcc@example.com'],
       //attachmentPaths: ['/path/to/attachment.zip'],
       isHTML: false,
-    );
-
-    await FlutterEmailSender.send(email);
-    final message = Message()
-      ..from = Address(username, _firstname.text)
-      ..recipients.add('bennetdiane01@gmail.com')
-      //..ccRecipients.addAll(['destCc1@example.com', 'destCc2@example.com'])
-      //..bccRecipients.add(Address('bccAddress@example.com'))
-      ..subject = 'Request a free quote :: 😀 :: ${DateTime.now()}'
-      ..text = 'First name: ${_firstname} \n Last name: ${_lastname} \n Email: ${_email} \n Company name: ${_company} \n Job Title: ${_job} \n Phone: ${_phone} \n Comments: ${_comments} \n ';
-      //..html = "<h1>Test</h1>\n<p>Hey! Here's some HTML content</p>";
+    );*/
 
     try {
-      final sendReport = await send(message, smtpServer);
-      var connection = PersistentConnection(smtpServer);
+    //await FlutterEmailSender.send(email);
+    //final sendReport = await send(message, smtpServer);
+     // var connection = PersistentConnection(smtpServer);
 
       // send the equivalent message
-      await connection.send(message);
+      //await connection.send(message);
 
       // close the connection
-      await connection.close();
-      print('Message sent: ' + sendReport.toString());
+      //await connection.close();
+      //print('Message sent: ' + sendReport.toString());
       return AlertDialog(
         title: Text('Request sent!'),
         content: Text("Thank you for sending your request. We'll get back to you soon."),
       );
-    } on MailerException catch (e) {
+    } on FlutterEmailSender catch (e) {
       print('Message not sent.');
-      for (var p in e.problems) {
-        print('Problem: ${p.code}: ${p.msg}');
-      }
       return AlertDialog(
         title: Text('Error occured!'),
         content: Text("An error occured. Try again!!"),
       );
       print('Message not sent.');
-      for (var p in e.problems) {
-        print('Problem: ${p.code}: ${p.msg}');
-      }
+
     }
     // DONE
 

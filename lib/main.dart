@@ -1,8 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:trash_collectors/ui/splash_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+  OneSignal.shared.setAppId("55a85dc6-9313-468e-a09a-cc149b4fd507");
+  /*OneSignal.shared.init("55a85dc6-9313-468e-a09a-cc149b4fd507", iOSSettings: {
+    OSiOSSettings.autoPrompt: false,
+    OSiOSSettings.inAppLaunchUrl: false
+  });*/
   runApp(MyApp());
 }
 

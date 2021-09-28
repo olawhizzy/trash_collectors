@@ -4,7 +4,7 @@ var publicKey = '[YOUR_PAYSTACK_PUBLIC_KEY]'; //paystack key
 
 String url = 'http://revenue.icmaservices.com'; // for URL
 
-var primaryColor = Color(0xff16103D);
+var primaryColor = Color(0xff0E86D4);
 //var primaryColor = Color(0xff2962FF);
 var secondaryColor = Color(0xff2962FF);
 //var secondaryColor = Color(0xffFEC65A);
